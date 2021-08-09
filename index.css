@@ -1,0 +1,58 @@
+.navbar .navbar-nav .nav-link {
+	color: darkblue;
+	font-size: 1.5em;
+}
+.navbar .navbar-nav .nav-link:hover {
+	color: #808080;
+}
+.nav-item {
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+@font-face {
+	font-family: logoFont;
+	src: url(assets/VeganStylePersonalUse-5Y58.ttf);
+}
+a.logo {
+	font-family: logoFont;
+	color: darkblue;
+	font-size: 2.5em;
+}
+body {
+	background-image: url(assets/background1.jpg),url(assets/background2.jpg);
+	background-position: top, bottom;
+	background-repeat: no-repeat, no-repeat;
+}
+
+.card-img-left {
+	width: 45%;
+	/* Link to your background image using in the property below! */
+	background: scroll center
+		url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+	background-size: cover;
+}
+
+.btn-login {
+	font-size: 0.9rem;
+	letter-spacing: 0.05rem;
+	padding: 0.75rem 1rem;
+}
+.btn-google {
+	color: white !important;
+	background-color: #ea4335;
+}
+.card{
+	padding:15px;
+	margin:50px;
+	color:darkblue;
+}
+.top-text{
+	color:darkblue;
+	padding:20px;
+	border:5px solid;
+	margin-right:30%;
+	margin-left:30%;
+	border-radius: 50px 20px;
+}
