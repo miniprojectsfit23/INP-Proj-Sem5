@@ -43,7 +43,7 @@ body {
 	color: white !important;
 	background-color: #ea4335;
 }
-.card{
+.card.home-card{
 	padding:15px;
 	margin:50px;
 	color:darkblue;

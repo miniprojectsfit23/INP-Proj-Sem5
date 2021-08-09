@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>TravelPedia - Register</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler7"
+			aria-controls="myNavbarToggler7" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbarToggler7">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="./home.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+				<a class="d-none d-lg-block logo" href="./home.html">TravelPedia</a>
+				<li class="nav-item">
+					<a class="nav-link" href="./login.html">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./register.html">Register</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-xl-9 mx-auto">
+				<div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+					<div class="card-img-left d-none d-md-flex">
+						<!-- Background image for card set in CSS! -->
+					</div>
+					<div class="card-body p-4 p-sm-5">
+						<h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+						<div class=' text-center alert alert-danger visually-hidden' id="error-box"></div>
+						<form>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" placeholder="myusername" required autofocus
+									id="username">
+								<label for="floatingInputUsername">Username</label>
+							</div>
+
+							<div class="form-floating mb-3">
+								<input type="email" class="form-control" placeholder="name@example.com" id="email">
+								<label for="floatingInputEmail">Email address</label>
+							</div>
+
+							<div class="form-floating mb-3">
+								<input type="password" class="form-control" placeholder="Password" id="password">
+								<label for="floatingPassword">Password</label>
+							</div>
+
+							<div class="form-floating mb-3">
+								<input type="password" class="form-control" placeholder="Confirm Password"
+									id="confirmPassword">
+								<label for="floatingPasswordConfirm">Confirm Password</label>
+							</div>
+
+							<div class="d-grid mb-2">
+								<a class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
+									id="register-button">Register</a>
+							</div>
+							<hr>
+							<div class="d-grid">
+								<a class="btn btn-lg btn-google btn-login fw-bold text-uppercase" href="./login.html">
+									Already have an account? Sign In
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		async function getData() {
+			const response = await fetch("https://jsonbin.org/varun-patkar/blog", {
+				method: 'GET', // *GET, POST, PUT, DELETE, etc.
+				mode: 'cors', // no-cors, *cors, same-origin
+				cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+				credentials: 'same-origin', // include, *same-origin, omit
+				headers: {
+					'Content-Type': 'application/json',
+					'authorization': 'token 6b4fb244-2652-416c-add3-f154671a157f'
+					// 'Content-Type': 'application/x-www-form-urlencoded',
+				},
+				redirect: 'follow', // manual, *follow, error
+				referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+			});
+			return response.json();
+		}
+		async function postData(data) {
+			const response = await fetch("https://jsonbin.org/varun-patkar/blog", {
+				method: 'POST', // *GET, POST, PUT, DELETE, etc.
+				mode: 'cors', // no-cors, *cors, same-origin
+				cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+				credentials: 'same-origin', // include, *same-origin, omit
+				headers: {
+					'Content-Type': 'application/json',
+					'authorization': 'token 6b4fb244-2652-416c-add3-f154671a157f'
+					// 'Content-Type': 'application/x-www-form-urlencoded',
+				},
+				redirect: 'follow', // manual, *follow, error
+				referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+				body: JSON.stringify(data) // body data type must match "Content-Type" header
+			});
+			return response.json();
+		}
+		var submitButton = document.getElementById("register-button");
+		submitButton.addEventListener("click", async () => {
+			var error = document.getElementById("error-box");
+			if (!error.className.includes("visually-hidden")) {
+				error.className = error.className.concat("visually-hidden");
+			}
+			var username = document.getElementById("username").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var confirmPassword = document.getElementById("confirmPassword").value;
+			data = await getData();
+			if (username == "" || email == "" || password == "" || confirmPassword == "") {
+				var error = document.getElementById("error-box");
+				error.className = 'text-center alert alert-danger';
+				error.innerHTML = 'Please fill all fields';
+				document.getElementById("username").value = "";
+				document.getElementById("email").value = "";
+				document.getElementById("password").value = "";
+				document.getElementById("confirmPassword").value = "";
+				return false;
+
+			}
+			else if (password != confirmPassword) {
+				var error = document.getElementById("error-box");
+				error.className = 'text-center alert alert-danger';
+				error.innerHTML = 'Password and Confirm Password are not the same';
+				document.getElementById("username").value = "";
+				document.getElementById("email").value = "";
+				document.getElementById("password").value = "";
+				document.getElementById("confirmPassword").value = "";
+				return false;
+			}
+			else {
+				if (data) {
+					for (var i = 0; i < data.length; i++) {
+						obj = data[i];
+						if (obj.username == username) {
+							var error = document.getElementById("error-box");
+							error.className = 'text-center alert alert-danger';
+							error.innerHTML = 'Username already taken';
+							document.getElementById("username").value = "";
+							document.getElementById("email").value = "";
+							document.getElementById("password").value = "";
+							document.getElementById("confirmPassword").value = "";
+							return false;
+						}
+						else if (obj.email == email) {
+							var error = document.getElementById("error-box");
+							error.className = 'text-center alert alert-danger';
+							error.innerHTML = 'Email is already registered';
+							document.getElementById("username").value = "";
+							document.getElementById("email").value = "";
+							document.getElementById("password").value = "";
+							document.getElementById("confirmPassword").value = "";
+							return false;
+						}
+					}
+				}
+				if (data == null) {
+					data = [{ 'username': username, 'email': email, 'password': password }];
+				}
+				else {
+					data.push({ 'username': username, 'email': email, 'password': password });
+				}
+				response = await postData(data);
+				var error = document.getElementById("error-box");
+				error.className = 'text-center alert alert-success';
+				error.innerHTML = 'You have been registered successfully';
+			}
+			document.getElementById("username").value = "";
+			document.getElementById("email").value = "";
+			document.getElementById("password").value = "";
+			document.getElementById("confirmPassword").value = "";
+			return false;
+		}
+		);
+	</script>
+</body>
+
+</html>
