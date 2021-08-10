@@ -165,10 +165,10 @@
 </body>
 <script>
 	var currUserName = window.localStorage.getItem('currUser');
-	if (currUserName){
-	document.getElementById("hello-text").innerHTML = "Hello, ".concat(currUserName);
+	if (currUserName) {
+		document.getElementById("hello-text").innerHTML = "Hello, ".concat(currUserName);
 	}
-	else{
+	else {
 		window.location.href = (window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1)).concat("login.html");
 	}
 	var signoutButton = document.getElementById("signout-button");
@@ -176,5 +176,68 @@
 		window.localStorage.clear();
 	});
 </script>
+<div>
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<h5>Group 1 Batch 1 TEITB</h5>
+					<div class="row">
+						<div class="col-6">
+							<ul class="list-unstyled">
+								<li><a href="">Varun Patkar</a></li>
+								<li><a href="">Tanish Parmar</a></li>
+								<li><a href="">Parth Narvekar</a></li>
+								<li><a href="">Vedant Pawar</a></li>
+							</ul>
+						</div>
+						<div class="col-6">
+							<ul class="list-unstyled">
+								<li><a href="">12</a></li>
+								<li><a href="">08</a></li>
+								<li><a href="">02</a></li>
+								<li><a href="">13</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- <ul class="nav">
+						<li class="nav-item"><a href="" class="nav-link pl-0"><i
+									class="fa fa-facebook fa-lg"></i></a>
+						</li>
+						<li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a>
+						</li>
+						<li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+						<li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a>
+						</li>
+					</ul>
+					<br>
+				</div> -->
+					<!-- <div class="col-md-2"> -->
+					<!-- <h5 class="text-md-right">Contact Us</h5> -->
+					<hr>
+				</div>
+				<div class="col-md-5">
+					<form method="POST" name="contact" data-netlify="true">
+
+						<p>Contact Us</p>
+						<fieldset class="form-group">
+							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+						</fieldset>
+						<br>
+						<fieldset class="form-group">
+							<textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+						</fieldset>
+						<br>
+						<fieldset class="form-group text-xs-right">
+							<div class="button1">
+								<button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
 
 </html>
