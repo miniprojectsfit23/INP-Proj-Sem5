@@ -20,11 +20,11 @@ a.logo {
 	color: darkblue;
 	font-size: 2.5em;
 }
-body {
+/* body {
 	background-image: url(assets/background1.jpg),url(assets/background2.jpg);
 	background-position: top, bottom;
 	background-repeat: no-repeat, no-repeat;
-}
+} */
 
 .card-img-left {
 	width: 45%;
@@ -46,7 +46,7 @@ body {
 .card.home-card{
 	padding:15px;
 	margin:50px;
-	color:darkblue;
+	color:#336699;
 }
 .top-text{
 	color:darkblue;
@@ -55,4 +55,24 @@ body {
 	margin-right:30%;
 	margin-left:30%;
 	border-radius: 50px 20px;
+}
+.container{
+	padding: 1% 1%;
+}
+.container1 {
+	position: relative;
+	text-align: center;
+	color:black;
+	font-size: 75px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+  }
+.card-body{
+	background-color: antiquewhite;
 }
