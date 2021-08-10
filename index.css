@@ -32,7 +32,7 @@ a.logo {
 
 .card-img-left {
 	width: 45%;
-	/* Link to your background image using in the property below! */
+	
 	background: scroll center
 		url("https://source.unsplash.com/WEQbe2jBg40/414x512");
 	background-size: cover;
@@ -88,25 +88,24 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
 }
 
-/* Sticky footer position and size
--------------------------------------------------- */
+
 html {
   position: relative;
   min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
+  
   margin-bottom: 300px;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
+  
   height: 200px;
 }
 
-/* Taller footer on small screens */
+
 @media (max-width: 567em) {
     body {
       margin-bottom: 500px;
@@ -116,8 +115,7 @@ body {
     }
 }
 
-/* Sticky footer style and color
--------------------------------------------------- */
+
 footer {
   padding-top: 30px;
   background-color: #292c2f;
@@ -150,4 +148,4 @@ footer .form-control {
 }
 
 
-/* Credits: https://www.codeply.com/p/EJd6H4Ejyi */
+
