@@ -162,6 +162,12 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		var currUserName = window.localStorage.getItem('currUser');
+		if (currUserName) {
+			window.location.href = (window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1)).concat("loggedin.html");
+		}
+	</script>
 </body>
 
 </html>
