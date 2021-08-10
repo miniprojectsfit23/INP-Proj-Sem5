@@ -46,6 +46,9 @@
 				</li>
 				<a class="d-none d-lg-block logo" href="./loggedin.html">TravelPedia</a>
 				<li class="nav-item">
+					<a class="nav-link" href="./loggedin.html" id="hello-text"></a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="./login.html">Sign Out</a>
 				</li>
 			</ul>
@@ -160,5 +163,29 @@
 		</div>
 	</div>
 </body>
+<script>
+	async function getData() {
+		const response = await fetch("https://jsonbin.org/varun-patkar/blog", {
+			method: 'GET',
+			mode: 'cors',
+			cache: 'no-cache', 
+			credentials: 'same-origin',
+			headers: {
+				'Content-Type': 'application/json',
+				'authorization': 'token 6b4fb244-2652-416c-add3-f154671a157f'
+			},
+			redirect: 'follow',
+			referrerPolicy: 'no-referrer',
+		});
+		return response.json();
+	}
+	(async function () {
+		data = await getData();
+		console.log(data);
+		var curruser = data[data.length-1];
+		console.log(curruser);
+		document.getElementById("hello-text").innerHTML = "Hello, ".concat(curruser['username']);
+	})()
+</script>
 
 </html>

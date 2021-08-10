@@ -25,6 +25,24 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./home.html">Home</a>
 				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false">
+						Locations
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="#">Morocco</a></li>
+						<li><a class="dropdown-item" href="#">Vietnam</a></li>
+						<li><a class="dropdown-item" href="#">Turkey</a></li>
+						<li><a class="dropdown-item" href="#">Peru</a></li>
+						<li><a class="dropdown-item" href="#">Japan</a></li>
+						<li><a class="dropdown-item" href="#">Ejypt</a></li>
+						<li><a class="dropdown-item" href="#">Costa Rica</a></li>
+						<li><a class="dropdown-item" href="#">UAE</a></li>
+						<li><a class="dropdown-item" href="#">Maldives</a></li>
+						<li><a class="dropdown-item" href="#">British Virgin Islands</a></li>
+					</ul>
+				</li>
 				<a class="d-none d-lg-block logo" href="./home.html">TravelPedia</a>
 				<li class="nav-item">
 					<a class="nav-link" href="./login.html">Login</a>
@@ -77,17 +95,16 @@
 	<script>
 		async function getData() {
 			const response = await fetch("https://jsonbin.org/varun-patkar/blog", {
-				method: 'GET', // *GET, POST, PUT, DELETE, etc.
-				mode: 'cors', // no-cors, *cors, same-origin
-				cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-				credentials: 'same-origin', // include, *same-origin, omit
+				method: 'GET',
+				mode: 'cors',
+				cache: 'no-cache', 
+				credentials: 'same-origin',
 				headers: {
 					'Content-Type': 'application/json',
 					'authorization': 'token 6b4fb244-2652-416c-add3-f154671a157f'
-					// 'Content-Type': 'application/x-www-form-urlencoded',
 				},
-				redirect: 'follow', // manual, *follow, error
-				referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+				redirect: 'follow',
+				referrerPolicy: 'no-referrer',
 			});
 			return response.json();
 		}
@@ -107,7 +124,7 @@
 					console.log(obj);
 					if ((username == obj.username) && (password == obj.password)) {
 						logIn = true;
-						window.location.href = ((window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1)).concat("loggedin.html?username=")).concat(username);
+						window.location.href = (window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1)).concat("loggedin.html");
 						return false;
 						//redirect to logged in
 					}
