@@ -102,7 +102,7 @@
 						<img src="assets/turkey.jpg" class="card-img-top" alt="" width=240px height=180px>
 						<div class="card-body">
 							<h5 class="card-title">Turkey</h5>
-							<a href="">Learn More>></a>
+							<a href="./turkey.html">Learn More>></a>
 						</div>
 					</div>
 				</div>
@@ -202,21 +202,26 @@
 						<hr>
 					</div>
 					<div class="col-md-5">
-						<form method="POST" name="contact" data-netlify="true">
-
+						<form action="https://getform.io/f/ff2982d1-b222-4ec3-9eb3-2e9676a1cbc4" method="POST"
+							target="_blank">
 							<p>Contact Us</p>
+							<br>
 							<fieldset class="form-group">
-								<input type="email" class="form-control" id="exampleInputEmail1"
+								<input type="text" name="name" class="form-control" id="exampleInputEmail1"
+									placeholder="Name">
+							</fieldset>
+							<br>
+							<br>
+							<fieldset class="form-group">
+								<input type="email" name="email" class="form-control" id="exampleInputEmail1"
 									placeholder="Enter email">
 							</fieldset>
 							<br>
-							<fieldset class="form-group">
-								<textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
-							</fieldset>
 							<br>
 							<fieldset class="form-group text-xs-right">
 								<div class="button1">
-									<button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+									<button type="submit" class="btn btn-secondary-outline btn-lg" value="submit"
+										onclick="return submit()">Send</button>
 								</div>
 							</fieldset>
 						</form>
@@ -225,6 +230,7 @@
 			</div>
 		</footer>
 	</div>
+
 
 
 	<!-- credits: https://www.codeply.com/p/EJd6H4Ejyi -->
