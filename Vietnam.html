@@ -39,22 +39,25 @@
                             <li><a class="dropdown-item" href="./Morocco.html">Morocco</a></li>
                             <li><a class="dropdown-item" href="./Vietnam.html">Vietnam</a></li>
                             <li><a class="dropdown-item" href="./turkey.html">Turkey</a></li>
-                            <li><a class="dropdown-item" href="#">Peru</a></li>
-                            <li><a class="dropdown-item" href="#">Japan</a></li>
-                            <li><a class="dropdown-item" href="#">Ejypt</a></li>
-                            <li><a class="dropdown-item" href="#">Costa Rica</a></li>
-                            <li><a class="dropdown-item" href="#">UAE</a></li>
-                            <li><a class="dropdown-item" href="#">Maldives</a></li>
-                            <li><a class="dropdown-item" href="#">British Virgin Islands</a></li>
                         </ul>
                     </li>
                     <a class="d-none d-lg-block logo" href="./home.html">TravelPedia</a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./register.html">Register</a>
-                    </li>
+                    <div id="notloggedin">
+						<li class="nav-item" style='display: inline-block;'>
+							<a class="nav-link" href="./login.html">Login</a>
+						</li>
+						<li class="nav-item" style='display: inline-block;'>
+							<a class="nav-link" href="./register.html">Register</a>
+						</li>
+					</div>
+					<div id="loggedin">
+						<li class="nav-item" style='display: inline-block;'>
+							<a class="nav-link" href="./home.html" id="hello-text"></a>
+						</li>
+						<li class="nav-item" style='display: inline-block;'>
+							<a class="nav-link" href="./login.html" id="signout-button">Sign Out</a>
+						</li>
+					</div>
                 </ul>
             </div>
         </nav>
@@ -222,8 +225,18 @@
     <script>
         var currUserName = window.localStorage.getItem('currUser');
         if (currUserName) {
-            window.location.href = (window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1)).concat("loggedin.html");
-        }
+			document.getElementById("hello-text").innerHTML = "Hello, ".concat(currUserName);
+			document.getElementById("notloggedin").style.display='none';
+			document.getElementById("loggedin").style.display='inline-block';
+		}
+		else{
+			document.getElementById("notloggedin").style.display='inline-block';
+			document.getElementById("loggedin").style.display='none';
+		}
+		var signoutButton = document.getElementById("signout-button");
+		signoutButton.addEventListener("click", () => {
+			window.localStorage.clear();
+		});
     </script>
 
 </body>
